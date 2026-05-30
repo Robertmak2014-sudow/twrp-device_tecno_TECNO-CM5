@@ -1,0 +1,17 @@
+name: Build TWRP
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build TWRP
+        uses: oshmoun/build-twrp@v1
+        with:
+          device_name: TECNO-CM5
+          twrp_branch: twrp-12.1
+          dt_branch: main
